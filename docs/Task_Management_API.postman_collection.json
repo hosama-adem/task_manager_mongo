@@ -1,0 +1,133 @@
+{
+  "info": {
+    "_postman_id": "a0fd0ad0-ec2b-4d15-b2cc-d04a298d5cb8",
+    "name": "task_manager",
+    "description": "**Task Management REST API** is a simple RESTful API built with **Go** and the **Gin Framework**. It provides basic CRUD (Create, Read, Update, Delete) operations for managing tasks using an in-memory data store. This collection contains all available endpoints for creating, retrieving, updating, and deleting tasks, along with example requests and responses for testing the APIEndFragment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47931306"
+  },
+  "item": [
+    {
+      "name": "Add Task",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"Duplicate Test\",\r\n  \"description\": \"Testing duplicate ID\",\r\n  \"due_date\": \"2026-09-01\",\r\n  \"status\": \"Pending\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/tasks/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "1"
+          ]
+        },
+        "description": "Creates a new task in the system.  \nThe request requires task details including title, description, due date, and status."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Taks By id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tasks/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "2"
+          ]
+        },
+        "description": "Retrieves the details of a specific task using its unique ID. Returns the task information if the task exists; otherwise, returns a not found error.EndFragment"
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks"
+          ]
+        },
+        "description": "Retrieves a list of all tasks currently stored in the system. Returns an array containing all available tasks.EndFragment"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Task By Id",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Master Go Gin Framework\",\r\n  \"description\": \"Complete REST API project using Go and Gin.\",\r\n  \"due_date\": \"2026-08-15\",\r\n  \"status\": \"Completed\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/tasks/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "2"
+          ]
+        },
+        "description": "Updates the details of an existing task using its ID. The request body should contain the updated task information. Returns the updated task after a successful update.\n\nEndFragment"
+      },
+      "response": []
+    },
+    {
+      "name": "Remove Task By Id",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tasks/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "3"
+          ]
+        },
+        "description": "Deletes a specific task from the system using its unique ID. Returns a success message if the task is deleted; otherwise, returns a not found error.EndFragment"
+      },
+      "response": []
+    }
+  ]
+}
